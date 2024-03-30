@@ -20,3 +20,6 @@ The basic structure is generated using [Spring Initializer](https://start.spring
 | ---------| ------------| -------|
 | /hello   | returns Hello world by default | /hello?name=amy |
 | /datetime | returns the date time in specific format | /datetime |
+
+
+* Jar file name generated is : springboot-application
