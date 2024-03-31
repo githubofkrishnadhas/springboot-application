@@ -22,4 +22,7 @@ The basic structure is generated using [Spring Initializer](https://start.spring
 | /datetime | returns the date time in specific format | /datetime |
 
 
-* Jar file name generated is : springboot-application
+* Jar file name generated is : springboot-application on /builds/libs/
+
+
+* docker-compose file is refernced based on [this](https://docs.docker.com/compose/compose-file/deploy/)
