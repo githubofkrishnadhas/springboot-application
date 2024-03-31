@@ -1,0 +1,17 @@
+version: '3'
+services:
+  gradle-springboot-app:
+    container_name: gradle-springboot-app
+    image: dockerofkrishnadhas/springboot-application
+    ports:
+      - "8080:80"
+    deploy:
+      resources:
+        limits: # limit is maximum container can use 
+          cpus: '0.5' #  50% of one CPU
+          memory: 256M # 256 Mega byte  # 
+        reservations: # the guarrenteed amount of resources it can use
+          cpus: '0.35' #  35% of one CPU
+          memory: 128M  # 128 Mega byte
+        
+
