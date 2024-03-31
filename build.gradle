@@ -14,7 +14,7 @@ java {
 jar {
     manifest {
         attributes(
-            'Main-Class': 'SpringbootApplication'
+            'Main-Class': 'com.example.springbootapplication.SpringbootApplication'
         )
     }
 }
