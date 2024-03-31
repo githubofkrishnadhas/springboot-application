@@ -18,7 +18,7 @@ FROM amazoncorretto:17-alpine3.19-jdk
 COPY --from=build /app/build/libs/springboot-application-plain.jar /springboot-application.jar
 
 # Expose the port that the application listens to
-EXPOSE 8080
+EXPOSE 8081
 
 # Specify the command to run the application
 CMD ["java", "-jar", "springboot-application.jar"]
