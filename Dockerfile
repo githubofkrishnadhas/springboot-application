@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app/
 
 # Gradle build
-RUN chmod +x gradlew && ./gradlew build  
+RUN chmod +x gradlew && ./gradlew clean build  
 
 # The above gradle build will generate the jar file named springboot-application.jar 
 # under the location /build/libs/springboot-application.jar
