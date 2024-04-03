@@ -1,5 +1,6 @@
 plugins {
 	id 'java'
+	id 'application'
 	id 'org.springframework.boot' version '3.2.4'
 	id 'io.spring.dependency-management' version '1.1.4'
 }
@@ -7,6 +8,9 @@ plugins {
 group = 'com.example'
 version = ''
 
+application {
+	mainClass = 'com.example.springbootapplication.SpringbootApplication'
+}
 java {
 	sourceCompatibility = '17'
 }
@@ -14,13 +18,12 @@ java {
 jar {
     manifest {
         attributes(
-	    'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
             'Main-Class': 'com.example.springbootapplication.SpringbootApplication'
         )
     }
 }
 
-repositories {f
+repositories {
 	mavenCentral()
 }
 

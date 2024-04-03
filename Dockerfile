@@ -1,11 +1,8 @@
 # Use Amazon Corretto 17 as the base image
 FROM amazoncorretto:17-alpine3.19-jdk as build
 
-# Set the working directory in the container
-WORKDIR /app
-
 #  Copy local code to the container image
-COPY . /app/
+COPY . .
 
 # Gradle build
 RUN chmod +x gradlew && ./gradlew clean build  
@@ -13,12 +10,8 @@ RUN chmod +x gradlew && ./gradlew clean build
 # The above gradle build will generate the jar file named springboot-application.jar 
 # under the location /build/libs/springboot-application.jar
 
-FROM amazoncorretto:17-alpine3.19-jdk
-# Copy the executable JAR file from the target directory into the container
-COPY --from=build /app/build/libs/springboot-application-plain.jar /springboot-application.jar
-
 # Expose the port that the application listens to
-EXPOSE 8081
+EXPOSE 8080
 
 # Specify the command to run the application
-CMD ["java", "-jar", "springboot-application.jar"]
+CMD ["java", "-jar", "/build/libs/springboot-application.jar"]
